@@ -1,0 +1,35 @@
+# create, insert, generate, print, delete, generate new col, print
+CREATE cities 5 string string int double bool name state population area is_capital?
+INSERT INTO cities 5 ROWS
+San_Francisco California 864816 46.87 false
+Ann_Arbor Michigan 120782 28.69 false
+Miami Florida 453579 55.25 false
+Albany New_York 98111 21.93 true
+Wyckoff Michigan 6000300 529 true
+GENERATE FOR cities hash INDEX ON is_capital?
+PRINT FROM cities 2 is_capital? name WHERE is_capital? = true
+DELETE FROM cities WHERE is_capital? = true
+GENERATE FOR cities hash INDEX ON state
+INSERT INTO cities 3 ROWS
+San_Francisco California 864816 46.87 false
+Ann_Arbor Michigan 120782 28.69 false
+Miami Florida 453579 55.25 false
+PRINT FROM cities 2 state name WHERE state = Michigan
+GENERATE FOR cities bst INDEX ON population
+PRINT FROM cities 3 population state name WHERE population < 4000000
+REMOVE cities
+CREATE cities 5 string string int double bool name state population area is_capital?
+INSERT INTO cities 3 ROWS
+San_Francisco California 864816 46.87 false
+Ann_Arbor Michigan 120782 28.69 false
+Wyckoff Michigan 6000300 529 true
+GENERATE FOR cities bst INDEX ON is_capital?
+PRINT FROM cities 2 is_capital? name WHERE is_capital? = false
+DELETE FROM cities WHERE is_capital? = true
+GENERATE FOR cities bst INDEX ON population
+PRINT FROM cities 3 population state name WHERE population > 4000
+INSERT INTO cities 1 ROWS
+Wyckoff Michigan 6000300 529 true
+GENERATE FOR cities bst INDEX ON population
+PRINT FROM cities 3 population state name WHERE population < 4000000
+QUIT

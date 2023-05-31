@@ -1,0 +1,29 @@
+CREATE cities 5 string string int double bool name state population area is_capital?
+INSERT INTO cities 20 ROWS
+San_Francisco California 864816 46.87 false
+Ann_Arbor Michigan 120782 28.69 false
+Miami Florida 453579 55.25 false
+Albany New_York 98111 21.93 true
+Chicago Illinois 2705000 234 true
+Wyckoff Michigan 6000300 529 true
+San_Francisco California 864816 46.87 false
+Ann_Arbor Michigan 120782 28.69 false
+Miami Florida 453579 55.25 false
+Albany New_York 98111 21.93 true
+Chicago Illinois 2705000 234 true
+Wyckoff Michigan 6000300 529 true
+San_Francisco California 864816 46.87 false
+Ann_Arbor Michigan 120782 28.69 false
+Miami Florida 453579 55.25 false
+Albany New_York 98111 21.93 true
+Chicago Illinois 2705000 234 true
+Wyckoff Michigan 6000300 529 true
+Chicago Illinois 2705000 234 true
+Wyckoff Michigan 6000300 529 true
+GENERATE FOR cities hash INDEX ON is_capital?
+DELETE FROM cities WHERE is_capital? = true
+PRINT FROM cities 2 is_capital? name WHERE is_capital? = false
+GENERATE FOR cities hash INDEX ON name
+DELETE FROM cities WHERE name = Wyckoff
+PRINT FROM cities 2 is_capital? name WHERE name = Miami
+QUIT

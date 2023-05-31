@@ -1,0 +1,29 @@
+CREATE cities 5 string string int double bool name state population area is_capital?
+INSERT INTO cities 1 ROWS
+San_Francisco California 864816 46.87 false
+PRINT FROM cities 3 population is_capital? name WHERE population < 4000000
+INSERT INTO cities 1 ROWS
+Ann_Arbor Michigan 120782 28.69 false
+PRINT FROM cities 3 population is_capital? name WHERE population < 4000000
+INSERT INTO cities 1 ROWS
+Miami Florida 453579 55.25 false
+PRINT FROM cities 3 population is_capital? name WHERE population < 4000000
+INSERT INTO cities 1 ROWS
+Albany New_York 98111 21.93 true
+PRINT FROM cities 3 population is_capital? name WHERE population < 4000000
+INSERT INTO cities 1 ROWS
+Chicago Illinois 2705000 234 false
+PRINT FROM cities 3 population is_capital? name WHERE population < 4000000
+INSERT INTO cities 1 ROWS
+Wyckoff Michigan 6000300 529 false
+GENERATE FOR cities bst INDEX ON is_capital?
+PRINT FROM cities 3 population is_capital? name WHERE is_capital? < true
+GENERATE FOR cities bst INDEX ON population
+PRINT FROM cities 3 population is_capital? name WHERE population < 4000000
+PRINT FROM cities 2 is_capital? population ALL
+GENERATE FOR cities hash INDEX ON population
+PRINT FROM cities 3 population is_capital? name WHERE population < 4000000
+GENERATE FOR cities bst INDEX ON population
+GENERATE FOR cities bst INDEX ON populations
+PRINT FROM cities 3 population is_capital? name WHERE population < 40000000
+QUIT

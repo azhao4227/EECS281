@@ -1,0 +1,22 @@
+M
+3
+5
+//sample where using warp pipe is required and leads to countess
+//castle room 0
+#.S..
+#....
+...!.
+##.1.
+.....
+//castle room 1
+.....
+..0..
+..!..
+#..2#
+.....
+//castle room 2
+.....
+..0..
+..!..
+#..C#
+.....

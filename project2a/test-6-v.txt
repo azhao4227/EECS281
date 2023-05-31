@@ -1,0 +1,16 @@
+# even zombies
+q: 1000
+r: 1234
+mnce: 50
+max-ranpeed: 60
+max-ranealth: 1
+---
+round: 1
+randobies: 26
+nameombies: 0
+---
+round: 5
+randombies: 0
+namembies: 4
+JamesDuderstadt distance: 20 speed: 10 health: 20
+NASD distance: 20 speed: 10 health: 5

@@ -1,0 +1,35 @@
+# Test-5: Join tests
+CREATE launch-vehicles 4 string double int bool rocket thrust stages american?
+GENERATE FOR launch-vehicles bst INDEX ON stages
+PRINT FROM launch-vehicles 2 rocket thrust WHERE thrust > 90.1
+INSERT INTO launch-vehicles 7 ROWS
+saturn 100.9 4 true
+long-march 90.3 4 false
+shuttle 120.1 3 true
+soyuz 87.10 3 false
+falcon 80.9 2 true
+starship 150.2 2 true
+electron 48.7 2 false
+GENERATE FOR launch-vehicles bst INDEX ON stages
+JOIN pets AND 281class WHERE Name = person AND PRINT 3 Name 1 emotion 2 likes_dogs? 1
+JOIN launch-vehicles AND 281class WHERE Name = person AND PRINT 3 Name 1 emotion 2 likes_dogs? 1
+CREATE nukes 3 double bool string tonnage thermo? name
+INSERT INTO nukes 6 ROWS
+100.7 false hiroshima
+112.1 false nagasaki
+512.1 false saturn
+3009.1 true bikini
+13102.2 true castle_bravo
+99999.9 true tsar
+JOIN launch-vehicles AND nukes WHERE name = rocket AND PRINT 3 name 1 rocket 2 tonnage 2
+JOIN launch-vehicles AND nukes WHERE rocket = INVALID AND PRINT 3 name 1 rocket 2 tonnage 2
+JOIN launch-vehicles AND nukes WHERE rocket = name AND PRINT 3 name 2 rocket 1 tonnage 2
+JOIN launch-vehicles AND nukes WHERE american? = thermo? AND PRINT 5 name 2 thermo? 2 tonnage 2 name 2 rocket 1
+DELETE FROM launch-vehicles WHERE stages > 3
+GENERATE FOR launch-vehicles hash INDEX ON rocket
+GENERATE FOR nukes hash INDEX ON name
+JOIN launch-vehicles AND nukes WHERE american? = thermo? AND PRINT 4 name 2 thermo? 2 tonnage 2 rocket 1
+INSERT INTO launch-vehicles 1 ROWS
+saturn 100.9 4 true
+JOIN launch-vehicles AND nukes WHERE rocket = name AND PRINT 2 name 2 rocket 1
+QUIT

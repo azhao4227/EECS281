@@ -1,0 +1,35 @@
+# all error checking
+CREATE emotion 3 string int int sad num ten
+CREATE emotion 2 string int int sad num ten
+CREATE 281class 3 string string bool emotion person Y/N
+CREATE cities 5 string string int double bool name state population area is_capital?
+CREATE pets 3 string bool bool name likes_cats? likes_dogs?
+PRINT FROM 281class 3 emotion person Y/N ALL
+PRINT FROM 281classs 3 emotion person Y/N ALL
+PRINT FROM 281class 3 emotions person Y/N ALL
+PRINT FROM 281class 3 emotion persons Y/N ALL
+PRINT FROM 281class 3 emotions persons Y/N ALL
+PRINT FROM pets 1 likes_cats? ALL
+INSERT INTO 281clsass 3 ROWS
+stressed Paoletti true
+happy Darden true
+sad Angstadt false
+INSERT INTO 281class 3 ROWS
+stressed Paoletti true
+happy Darden true
+sad Angstadt false
+PRINT FROM cities 3 is_capital? name population ALL
+PRINT FROM 281class 2 emotion person ALL
+PRINT FROM 281class 1 person ALL
+GENERATE FOR citie bst INDEX ON is_capital?
+GENERATE FOR cities bst INDEX ON is_apital?
+GENERATE FOR cities bst INDEX ON is_capital?
+PRINT FROM city 3 population is_capital? name WHERE is_capitals? < true
+PRINT FROM cities 3 populations is_capital? name WHERE is_capitals? < true
+PRINT FROM cities 3 population is_capital? name WHERE is_capitals? < true
+DELETE FROM cities WHERE population > 400000
+DELETE FROM citie WHERE populations > 400000
+DELETE FROM cities WHERE populations > 400000
+PRINT FROM cities 3 population is_capital? name ALL
+PRINT FROM pets 2 name likes_dogs? ALL
+QUIT

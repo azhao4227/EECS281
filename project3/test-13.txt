@@ -1,0 +1,35 @@
+# lol
+CREATE cities 5 string string int double bool name state population area is_capital?
+INSERT INTO cities 6 ROWS
+San_Francisco California 864816 46.87 false
+Ann_Arbor Michigan 120782 28.69 false
+Miami Florida 453579 55.25 false
+Albany New_York 98111 21.93 true
+Chicago Illinois 2705000 234 true
+Wyckoff Michigan 6000300 529 true
+#lol
+GENERATE FOR cities bst INDEX ON population
+DELETE FROM cities WHERE population < 200000
+PRINT FROM cities 3 population is_capital? name WHERE population < 2000000
+GENERATE FOR cities bst INDEX ON is_capital?
+DELETE FROM cities WHERE is_capital? = true
+PRINT FROM cities 3 population is_capital? name WHERE is_capital? = false
+INSERT INTO cities 6 ROWS
+San_Francisco California 864816 46.87 false
+Ann_Arbor Michigan 120782 28.69 false
+Miami Florida 453579 55.25 false
+Albany New_York 98111 21.93 true
+Chicago Illinois 2705000 234 true
+Wyckoff Michigan 6000300 529 true
+PRINT FROM cities 3 population is_capital? name WHERE is_capital? = false
+GENERATE FOR cities bst INDEX ON area
+DELETE FROM cities WHERE area > 50
+PRINT FROM cities 3 population is_capital? name WHERE area < 56
+CREATE 281class 3 string string bool emotion person Y/N
+GENERATE FOR 281class hash INDEX ON Y/N
+PRINT FROM 281class 2 person emotion WHERE Y/N = true
+GENERATE FOR 281class bst INDEX ON emotion
+PRINT FROM 281class 2 person emotion WHERE emotion > true
+GENERATE FOR 281class bst INDEX ON person
+PRINT FROM 281class 2 person emotion WHERE emotion < true
+QUIT
